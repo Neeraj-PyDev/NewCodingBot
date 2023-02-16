@@ -1,3 +1,14 @@
-""" Docker Information {Cheat sheet}"""
+""" Docker Information {Cheat sheet}
+Docker cheatsheet is a summary of commonly used Docker commands and their options, as well as other useful information related to Docker.
+"""
+# Download Docker from hub.docker.com
 
-1> Whenever running Docker in Windows or mac OS , first open Docker Desktop ,otherwise docker daemon error will come.For Ubuntu/Linux , you can directly run docker.
+# Whenever running Docker in Windows or mac OS , first open Docker Desktop ,otherwise docker daemon error will come.For Ubuntu/Linux , you can directly run docker.
+
+(in GitBash)
+**Commands:-
+  1. docker --version
+  2. docker run hello-world
+  3. winpty docker run -it ubuntu = [To open Ubuntu in bash]
+  4. exit = [To come out of ubuntu]
+  
