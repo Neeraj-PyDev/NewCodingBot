@@ -67,3 +67,15 @@
 2> git stash list = list stack-order of stashed file changes.
 3> git stash pop = write working from top of stash stack.
 4> git stash drop = discard the changes from top of stash stack.
+
+
+#-------------------------------------------------------------------------------------
+# Go to folder directory--
+1.git init
+2.git pull "https://....."
+3.git status
+4.git add .
+5.git commit -m "changes made"
+6.git remote add origin "https://......"
+7.git remote -v
+8.git push -u origin master
