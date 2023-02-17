@@ -6,9 +6,141 @@ Docker cheatsheet is a summary of commonly used Docker commands and their option
 # Whenever running Docker in Windows or mac OS , first open Docker Desktop ,otherwise docker daemon error will come.For Ubuntu/Linux , you can directly run docker.
 
 (in GitBash)
-**Commands:-
+**Startup Commands:-
   1. docker --version
   2. docker run hello-world
   3. winpty docker run -it ubuntu = [To open Ubuntu in bash]
   4. exit = [To come out of ubuntu]
   
+  
+**RUN A NEW CONTAINER :-
+---------------------
+  1.Start a new container from an image ~~
+    docker run IMAGE
+      docker run nginx
+    
+  2.And assign it a name ~~
+    docker run --name container image
+      docker run --name web nginx
+    
+  3.And map a Port ~~
+    docker run -p Hostport:ContainerPort Image
+      docker run -p 8080:80 nginx
+    
+  4.And map all ports ~~
+    docker run -P Image
+      docker run -P nginx
+      
+  5.And start container in background ~~
+    docker run -d Image
+      docker run -d nginx
+     
+  6.And assign it a hostname ~~
+    docker run --hostname Hostname Image
+      docker run --hostname srv nginx
+      
+  7.And add a DNS entry ~~
+    docker run --add-host Hostname:IP Image
+    
+  8.And map a local directory into the container ~~
+    docker run -v Hostdir:Targetdir Image
+    
+      
+      
+      
+**MANAGE CONTAINERS :-
+-------------------
+    1.Show a list of running Containers ~~
+      docker ps
+      
+    2.Show all containers ~~
+      docker ps -a
+      
+    3.Delete a container
+      docker rm Container
+    
+    4.Delete a running Container ~~
+      docker rm -f Container
+      
+    5.Stop a running Container ~~
+      docker stop Container
+      
+    6.Start a stopped Container ~~
+      docker start Container
+      
+    7.Copy a file from Container to Host ~~
+      docker cp Container:Source Target
+        
+    8.Copy a file from Host to Container ~~
+      docker cp Target Container:Source
+      
+    9.Start a shell inside a running Container ~~
+      docker exec -it Container:Executable
+      docker exec -it web:bash
+    
+    10.Rename a Container ~~
+       docker rename old_name new_name
+        
+    11.Create an Image out of Container ~~
+        docker commit Container
+        
+        
+        
+**MANAGE IMAGES :-
+---------------
+    1.Download an Image ~~
+      docker pull Image[:Tag]
+      docker pull nginx
+      
+    2.Upload an Image to a Repository ~~
+      docker push Image
+      
+    3.Delete an Image ~~
+      docker rmi Image
+      
+    4.Show a list of all Images ~~
+      docker images 
+    
+    5.Delete all unused images ~~
+      docker image prune -a
+      
+    6.Build an image from a dockerfile ~~
+      docker build Directory
+      
+    7.Tag an Image ~~
+      docker tag Image NewImage
+      docker tag ubuntu ubuntu:18.04
+      
+    8.Build and tag an image from dockerfile ~~
+      docker build -t Image Directory
+      docker build -t myimage
+      
+    9.Save an image from .tar file ~~
+      docker save Image > File
+      docker save nginx > nginx.tar
+      
+    10.Load an Image from .tar file ~~
+      docker load -i Tarfile
+      docker load -i nginx.tar
+
+
+
+**INFO & STATS :-
+--------------
+  1.Show the logs of a container ~~
+    docker logs Container
+    
+  2.Show stats of running Container ~~
+    docker stats
+    
+  3.Show processes running inside Container ~~
+    docker top container
+    
+  4.Show installed Docker Version ~~
+    docker --version
+    
+  5.Show the difference with Images ~~
+    docker diff Container
+    
+    
+      
