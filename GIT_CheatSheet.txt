@@ -1,0 +1,69 @@
+# SETUP {COnfiguring user information used across all local repositories}
+--------
+1> git config --global user.name "[firstname lastname]" = set a name that is identified for credit when review version history.
+2> git config --global user.email "[valid-email]" = set an email addr that will be associated with each history maker.
+3> git config --global color.ui auto = set automatic command line coloring for Git for easy reviewing.
+
+
+# SETUP & INITIALIZING {Configuring user information,initializing and cloning repositories}
+-----------------------
+1> git init = initializing an existing directory as git repository.
+2> git clone [url] = retrieve an entire repository from a hosted location via URL.
+
+
+# STAGE & SNAPSHOT {Working with Snapshots and Git Staging area}
+-------------------
+1> git status = show modified files in working directory and staged for next commit.
+2> git add [file] = add a file as it looks now for next commit(stage).
+3> git reset [file] = unstage a file while retaining changes in working directory.
+4> git diff = diff of what is changed but not staged.
+5> git diff --stagged = diff of what is staged but not yet committed.
+6> git commit -m "[descriptive message]" = commit your stagged content as a new commit snapshot.
+
+
+# BRANCH & MERGE {ISolating work in branches,changing context and integrating changes}
+-----------------
+1> git branch = list your branches.
+2> git branch "[branch-name]" = create a new branch at current commit.
+3> git checkout = switch to another branch and check it out into your working directory.
+4> git merge [branch] = merge the specified branch's history into current one.
+5> git log = show all commits in current branch's history.
+
+
+# INSPECT & COMPARE {examining logs,diff and object information}
+--------------------
+1> git log = show the commit history for currently active branch.
+2> git log branchB..branchA = show the commits on branchA that are not on branchB.
+3> git log --follow[file] = show the commits that changed file even across renames.
+4> git diff branchB...branchA = show the diff of what is in BranchA that is not in BranchB.
+5> git show [SHA] = show any object in Git in human readable format.
+
+
+# SHARE & UPDATE {Retrieving updates from another repository and updating local repos}
+-----------------
+1> git remote add [alias] [url] = add a git URL as an alias.
+2> git fetch [alias] = fetch down all the branches from that Git Remote.
+3> git merge [alias]/[branch] = merge a remote branch into your current branch to bring it upto date.
+4> git push [alias] [branch] = Transmit local branch commits to the remote repository branch.
+5> git pull = fetch and merge any commits from the tracking remote branch.
+
+
+# TRACKING PATH CHANGES {Versioning file removes and path changes}
+------------------------
+1> git rm [file] = delete the file from project and stage the removal for commit.
+2> git mv [existing-path] [new-path] = change an existing file path and stage the move.
+3> git log --stat -M = show all commit logs with indication of any paths that moved.
+
+
+# REWRITE HISTORY {Rewriting Branches,updating commits and clearing history}
+------------------
+1> git rebase [branch] = apply any commits of current branch ahead of specified ones.
+2> git reset --hard [commit] = clear staging area , rewrite working tree from specified commit.
+
+
+# TEMPORARY COMMITS {Temporarily store modified,tracked files in order to change branches}
+--------------------
+1> git stash = Save modified and staged changes.
+2> git stash list = list stack-order of stashed file changes.
+3> git stash pop = write working from top of stash stack.
+4> git stash drop = discard the changes from top of stash stack.
