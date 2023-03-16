@@ -5,6 +5,8 @@ Docker cheatsheet is a summary of commonly used Docker commands and their option
 
 # Whenever running Docker in Windows or mac OS , first open Docker Desktop ,otherwise docker daemon error will come.For Ubuntu/Linux , you can directly run docker.
 
+# pip install docker-compose
+
 (in GitBash)
 **Startup Commands:-
   1. docker --version
